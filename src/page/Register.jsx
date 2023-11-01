@@ -1,5 +1,7 @@
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Register = () => {
 
@@ -7,16 +9,26 @@ const Register = () => {
     const [password, setPassword] = useState('');
     const {createUser} = useAuth();
 
+    const navigate = useNavigate();
+
     const handleSubmit = async(e) => {
         e.preventDefault();
+
+        const toastID = toast.loading('Logging in');
         try {
             await createUser(email, password)
             .then(res => {
                 console.log(res);
+                
+                toast.success('Logged in...', {id: toastID});
+                navigate('/');
             })
         } catch(err) {
             console.log(err);
+            toast.error( err.message, {id: toastID});
         }
+        // toast.success('Logged in...');
+        // navigate('/');
     }
 
     return (

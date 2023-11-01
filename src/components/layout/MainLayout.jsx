@@ -1,7 +1,17 @@
 import ProprTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const MainLayout = ({ children }) => {
+    const {user, logout} = useAuth();
+
+    const handleLogout = () => {
+        logout()
+        .then(res => {
+            console.log(res);
+        })
+    }
+
     const links = <>
         <li>
             <NavLink to="/about">About</NavLink>
@@ -10,7 +20,11 @@ const MainLayout = ({ children }) => {
             <NavLink to="/contact">Contact</NavLink>
         </li>
         <li>
-            <NavLink to="/login">Login</NavLink>
+            {
+                user?.email ? 
+                <button onClick={() => handleLogout()}>Logout</button> : 
+                <NavLink to="/login">Login</NavLink>
+            }
         </li>
     </>
 
