@@ -1,0 +1,38 @@
+SDLC: Software Development Life Cycle
+
+Clean Co Service
+Requirement Analysis:
+
+User:
+# Can login & logout (firebase)
+# Can book services
+# Can cancel services
+
+Tech Stack:
+# Frontend:
+  # React
+  # Tailwind CSS
+  # DaisyUI
+
+# Backend
+  # Express
+  # MongoDB
+
+API Design
+  # /api/v1 (old version)
+  # /api/v2 (new version)
+
+Services:
+  # /api/v1/services (GET)
+
+Users:
+  # /api/v1/user/create-booking (POST)
+  # /api/v1/user/cancel-booking (DELETE)
+
+Auth
+  # /api/v1/auth/access-token (POST)
+  # /api/v1/auth/logout
+
+
+//////////////// Font End ////////////////
+1. wireframe (basic structures of website)
