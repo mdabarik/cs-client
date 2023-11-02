@@ -36,3 +36,18 @@ Auth
 
 //////////////// Font End ////////////////
 1. wireframe (basic structures of website)
+
+
+
+Fetch vs axios
+# why axios?
+1. Increases DX (developer experience)
+2. We can use baseURL for (axios) but can't use for (fetch)
+3. We can use interceptor (we can capture, client to backend response inbetween)
+4. Logout if response give 401 (unauthorized) [interceptor]
+
+# Why tanstack query?
+1. Data fetching - not too good. We use normally fetch to fetch data (side effect) [useEffect]
+2. Tanstack query || (Redux RTK) || (SWR Vercel)
+3. React Router Dom [Fetch Data After React Router DOM]
+4. useQuery || useMutation
